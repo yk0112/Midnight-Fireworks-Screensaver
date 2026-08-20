@@ -1,68 +1,70 @@
 # Midnight Fireworks Screensaver
 
-**午前二時の花火** — 月と星が浮かぶ静かな海辺で、遠くの花火を眺める macOS 用スクリーンセーバーです。
+**English** | [日本語](README.ja.md)
 
-![午前二時の花火 — 月夜の海辺と遠くの花火](screenshots/hero.png)
+**午前二時の花火 (Fireworks at 2 A.M.)** is a macOS screen saver for quietly watching distant fireworks over a moonlit beach.
 
-画面全体を明滅させず、星や波も常時点灯のまま。まっすぐ上がり、高い位置で開く単発の花火を、ゆっくり眺められるように作りました。
+![A moonlit pixel-art beach with distant fireworks](screenshots/hero.png)
 
-## ダウンロード
+The scene avoids full-screen flashes and background flicker: the stars and waves remain steadily lit while individual fireworks rise vertically and bloom high above the horizon.
 
-[**Midnight Fireworks Screensaver v1.1.1（ZIP）**](release/Midnight-Fireworks-Screensaver-v1.1.1.zip)
+## Download
 
-- 対応OS: macOS 11 Big Sur 以降
-- 対応CPU: Apple Silicon / Intel（Universal Binary）
-- 表示名: `午前二時の花火`
+[**Download Midnight Fireworks Screensaver v1.1.1 (ZIP)**](release/Midnight-Fireworks-Screensaver-v1.1.1.zip)
 
-## 特長
+- Requires macOS 11 Big Sur or later
+- Supports Apple Silicon and Intel Macs (Universal Binary)
+- Appears in macOS as `午前二時の花火`
 
-- 月、星、遠い島影、月明かりが映る海辺を描いたピクセルアート
-- 菊、牡丹、柳、輪、点滅、千輪、椰子の7種類の花火
-- 起動直後に最初の花火を打ち上げ
-- 打ち上げは垂直方向、高めの位置で開花
-- スターマインや画面全体のフラッシュを使わない静かな演出
-- 花火の間隔を3段階から選択可能
-- さざ波、風鈴、遠くの花火音を個別にオン・オフ可能（初期設定はすべてオフ）
+## Features
 
-## インストール
+- A pixel-art seaside scene with the moon, stars, distant islands, and moonlight reflected on the water
+- Seven firework styles: peony, chrysanthemum, willow, ring, strobe, senrin, and palm
+- The first firework launches as soon as the screen saver starts
+- Fireworks travel straight upward and bloom high in the sky
+- No star mine sequences or full-screen flashes
+- Three selectable launch frequencies
+- Optional wave, wind chime, and distant firework sounds, all disabled by default
 
-1. 上のZIPファイルをダウンロードして展開します。
-2. `午前二時の花火.saver` をダブルクリックします。
-3. macOSの案内に従ってインストールします。
-4. 「システム設定」→「スクリーンセーバ」で `午前二時の花火` を選びます。
-5. 必要に応じて「オプション」から花火の間隔や音を設定します。
+## Installation
 
-### macOSのセキュリティ警告について
+1. Download and extract the ZIP file above.
+2. Double-click `午前二時の花火.saver`.
+3. Follow the macOS prompt to install it.
+4. Open System Settings → Screen Saver and select `午前二時の花火`.
+5. Open Options to adjust the firework frequency and sounds.
 
-この配布物は ad hoc 署名済みですが、Apple Developer IDによる署名・公証は行っていません。そのため、初回起動時にmacOSが開発元を確認できない旨を表示する場合があります。
+### macOS security notice
 
-ソースコードとビルド手順を確認し、配布元を信頼できる場合に限り、いったん開こうとした後で「システム設定」→「プライバシーとセキュリティ」から「このまま開く」を選択してください。詳しくは [Appleの案内](https://support.apple.com/en-gb/102445) を参照してください。
+The downloadable build is ad hoc signed, but it is not signed with an Apple Developer ID or notarized by Apple. macOS may therefore report that it cannot verify the developer when you first open it.
 
-## 設定
+Review the source and build instructions first. Only if you trust the source, try opening the screen saver once and then choose Open Anyway under System Settings → Privacy & Security. See [Apple's guidance](https://support.apple.com/en-gb/102445) for details.
 
-| 項目 | 内容 |
+## Options
+
+| Setting | Behavior |
 | --- | --- |
-| 賑やか | 約4〜6秒間隔 |
-| 静か | 約20〜45秒間隔（初期設定） |
-| とても静か | 約35〜70秒間隔 |
-| 音 | さざ波、風鈴、遠くの花火音を個別設定 |
+| Lively | A firework approximately every 4–6 seconds |
+| Quiet | Approximately every 20–45 seconds (default) |
+| Very quiet | Approximately every 35–70 seconds |
+| Sound | Independently enable waves, wind chimes, and distant fireworks |
 
-![午前二時の花火の設定画面](screenshots/settings.png)
+![Midnight Fireworks settings window](screenshots/settings.png)
 
-## ソースからビルド
+## Build from source
 
-Xcode Command Line Toolsが必要です。リポジトリを取得した後、次を実行します。
+Xcode Command Line Tools are required. After cloning the repository, run:
 
 ```sh
 chmod +x build.sh
 ./build.sh
 ```
 
-ビルドされたスクリーンセーバーは `dist/午前二時の花火.saver` に作成されます。ビルドスクリプトは arm64 / x86_64 のUniversal Binaryを生成し、ローカルでad hoc署名を行います。
+The screen saver will be created at `dist/午前二時の花火.saver`. The build script produces an arm64/x86_64 Universal Binary and applies a local ad hoc signature.
 
-## 動作確認用プレビューホスト
+## Preview and regression test host
 
-ScreenSaverフレームワーク上での描画、7種類の花火、設定項目を確認するための小さなテストホストを同梱しています。
+The repository includes a small host application that checks rendering through ScreenSaver.framework, all seven firework styles, and the configuration controls.
 
 ```sh
 mkdir -p build
@@ -76,14 +78,14 @@ xcrun clang -fobjc-arc -fmodules \
   /tmp/midnight-fireworks-settings.png
 ```
 
-## 構成
+## Repository layout
 
-- `Source/` — スクリーンセーバー本体（Objective-C / ScreenSaver.framework）
-- `Resources/Audio/` — 効果音・環境音
-- `Tools/` — プレビューと回帰確認用ホスト
-- `screenshots/` — README掲載画像
-- `release/` — インストール用ZIPパッケージ
+- `Source/` — screen saver implementation in Objective-C using ScreenSaver.framework
+- `Resources/Audio/` — sound effects and ambience
+- `Tools/` — preview and regression test host
+- `screenshots/` — images used in the README files
+- `release/` — installable ZIP package
 
-## ライセンス
+## License
 
-ソースコードは [MIT License](LICENSE) です。音声素材はCC0で公開されている録音を使用しています。出典は [AUDIO_CREDITS.md](AUDIO_CREDITS.md) を参照してください。
+The source code is available under the [MIT License](LICENSE). The bundled audio uses recordings released under CC0; see [AUDIO_CREDITS.md](AUDIO_CREDITS.md) for attribution and source links.
