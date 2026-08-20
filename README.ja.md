@@ -6,7 +6,6 @@
 
 ![午前二時の花火 — 月夜の海辺と遠くの花火](screenshots/hero.png)
 
-画面全体を明滅させず、星や波も常時点灯のまま。まっすぐ上がり、高い位置で開く単発の花火を、ゆっくり眺められるように作りました。
 
 ## ダウンロード
 
@@ -77,14 +76,6 @@ xcrun clang -fobjc-arc -fmodules \
   /tmp/midnight-fireworks-preview.png \
   /tmp/midnight-fireworks-settings.png
 ```
-
-## 構成
-
-- `Source/` — スクリーンセーバー本体（Objective-C / ScreenSaver.framework）
-- `Resources/Audio/` — 効果音・環境音
-- `Tools/` — プレビューと回帰確認用ホスト
-- `screenshots/` — README掲載画像
-- `release/` — インストール用ZIPパッケージ
 
 ## ライセンス
 
