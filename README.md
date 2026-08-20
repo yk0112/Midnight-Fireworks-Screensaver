@@ -6,8 +6,6 @@
 
 ![A moonlit pixel-art beach with distant fireworks](screenshots/hero.png)
 
-The scene avoids full-screen flashes and background flicker: the stars and waves remain steadily lit while individual fireworks rise vertically and bloom high above the horizon.
-
 ## Download
 
 [**Download Midnight Fireworks Screensaver v1.1.1 (ZIP)**](release/Midnight-Fireworks-Screensaver-v1.1.1.zip)
@@ -77,14 +75,6 @@ xcrun clang -fobjc-arc -fmodules \
   /tmp/midnight-fireworks-preview.png \
   /tmp/midnight-fireworks-settings.png
 ```
-
-## Repository layout
-
-- `Source/` — screen saver implementation in Objective-C using ScreenSaver.framework
-- `Resources/Audio/` — sound effects and ambience
-- `Tools/` — preview and regression test host
-- `screenshots/` — images used in the README files
-- `release/` — installable ZIP package
 
 ## License
 
